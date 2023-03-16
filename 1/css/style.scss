@@ -1,0 +1,361 @@
+a{
+  text-decoration: none;
+}
+.bizinfo{
+  background-color: #0E1831;
+}
+.a-first-section{
+  padding: 1rem;
+  background: white;
+  position: relative;
+  top: 200px;
+  .a-search-section{
+    position: relative;
+    top: -200px;
+    border-radius: 0px;
+    padding: 5rem 20rem;
+    background-size: cover;
+    padding-top: 5rem;
+    text-align: left;
+    .special-color{
+      color: #F6DB02;
+    }
+    form{
+      display: none!important;
+      margin: 0px;
+      margin-top: 30px;
+      width: 100%;
+      button{
+        background-color: none!important;
+        color: #8E6E53!important;
+        border: 0px;
+      }
+    }
+  }
+}
+#listingsHome{
+  position: relative;
+  // top: 200px;
+  #restOfPage{
+    // display: none;
+    .featured_businesses-carouselle{
+      background: #232939;
+      p.title-sm{
+        display: block;
+        padding-left: 5rem;
+        text-align: left;
+        color: white!important;
+      }
+      h2.title_3{
+        color: white!important;
+        padding-left: 5rem;
+        // width: 100%;
+        text-align: left;
+        // border-bottom: 1px solid #000;
+        // line-height: 0.1em;
+        // margin: 10px 0 20px;
+      }
+      #myCarousel{
+        #featuredCustomerList{
+          .carousel-item{
+            left: 1rem;
+            .pe-md-4 {
+              border-radius: 10px;
+              color: white !important;
+              margin-bottom: 10px;
+              width: 33.33333333333333%;
+              padding: 0px;
+              .featuredDiv{
+                background: white;
+                padding: 20px;
+                min-height: 240px;
+                border-radius: 10px;
+                color: black;
+                a{
+                  color: black;
+                  text-decoration: none;
+                  .b_logo{
+                    text-align: center;
+                    img{
+                      width: 85px;
+                      height: 85px;
+                      border-radius: 100px;
+                      margin-bottom: 10px;
+                    }
+                    .title_2{
+                      font-size: 1rem;
+                    }
+                    .big_pra{
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .categories_section{
+      background-color: white;
+      .container{
+        .categories_bg{
+          .a-category{
+            padding-top: 5rem;
+            &>div:first-child{
+              width: 100%;
+              .title-sm{
+                text-align: center;
+                display: block;
+                color: #000000!important;
+              }
+              .title-bg{
+                color: #000000!important;
+                text-align: center;
+                padding-bottom: 20px;
+                // border-bottom: 1px solid #8E6E53;
+              }
+            }
+            #mainCategories{
+              width: 100%;
+              ul{
+                display: grid;
+                grid-template-columns: repeat(4,minmax(0,1fr));
+                .c_text{
+                  a{
+                    padding: 0px 12px 0px;
+                    display: inline-table;
+                    border-radius: 50px;
+                    width: 100%;
+                    &:hover{
+                      background: #0D65A2;
+                      color: white;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #recentAddBusiness{
+      padding-top: 2rem;
+      background-color: #0D68A7;
+      .container{
+        .title-sm{
+          color: #fff;
+          display: block;
+          text-align: left;
+        }
+        .title-bg{
+          padding-bottom: 20px;
+          text-align: left;
+          color: #fff;
+          // border-bottom: 1px solid #8E6E53;
+        }
+        .mainCustomerDiv{
+          background: white;
+          padding: 20px;
+          // padding-top: 50px;
+          min-height: 200px;
+          border-radius: 5px;
+          padding-top: 5rem;
+          // border-radius: 10px;
+          color: black;
+          // border: 1px solid #5D8AFD;
+
+          a{
+            color: black;
+            text-decoration: none;
+            .b_logo{
+              text-align: center;
+              padding: 0px;
+              img{
+                width: 85px;
+                height: 85px;
+                border-radius: 100px;
+                margin-bottom: 10px;
+              }
+              .title_2{
+                font-size: 20px;
+                font-weight: bolder;
+                height: 40px;
+              }
+              .big_pra{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#listingsBusiness{
+  background: black;
+  .sub_header_2{
+    position: relative;
+    top: 200px;
+    background-color: aliceblue;
+    .a-search-section{
+      position: relative;
+      top: -200px;
+      background-size: cover;
+      border-radius: 0px;
+      .categoryDiv{
+        .homeLink.text-left{
+          color: white;
+          .category-item{
+            color: #F6DB02;
+          }
+        }
+        #categoryName{
+
+        }
+      }
+    }
+  }
+  .business_name{
+    padding: 20px;
+    .CategoryList{
+
+    }
+    .container{
+      max-width: 2000px;
+    }
+    #catCustomerList{
+      .col-md-4.pe-md-4{
+        border-radius: 10px;
+        color: white !important;
+        margin-bottom: 10px;
+        padding: 5px;
+        width: 50%!important;
+        padding-right: 5px!important;
+        .CustomerListDiv{
+          background: white;
+          padding: 20px;
+          min-height: 130px;
+          border-radius: 10px;
+          height: 130px;
+          color: black;
+          a{
+            color: black;
+            text-decoration: none;
+            .bus_box{
+              text-align: left;
+              flex-direction: row;
+              .bus_logo{
+                img{
+                  width: 85px;
+                  height: 85px;
+                  border-radius: 100px;
+                  margin-bottom: 10px;
+                }
+              }
+              .bus_text{
+                padding: 1rem;
+                .first_t{
+                  h4{
+                    font-size: 12px;
+                  }
+                  p.pas{
+                    font-weight: bolder;
+                  }
+                }
+                .sec_t{
+                  display: block;
+                  position: relative;
+                  top: -1rem;
+                  p.a-domain{
+                    color: #5A80DE;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#listingsBusiness{
+  .sub_header_2{
+    .a-search-section.relative.grid-sys{
+      display: flex;
+      flex-direction: row;
+      background-size: cover;
+      height: 530px;
+      border-radius: 0px;
+      &:first-child>div:first-child{
+        width: 65%;
+        text-align: left;
+        padding-top: 100px;
+        h1#bizTitle{
+          margin-left: 10px;
+          padding-left: 0px;
+
+        }
+        .categoryDiv.mt-0{
+          margin-top: 50px!important;
+          margin-left: 10px;
+          .homeLink{
+            color: white!important;
+          }
+          .category-item{
+            color: white!important;
+            font-family: Merriweather;
+          }
+        }
+      }
+
+      .m-auto{
+        display: none;
+        margin-right: 0px!important;
+        img.bizLogo{
+          display: none;
+        }
+      }
+    }
+  }
+  .business_name_section_a{
+    background-color: aliceblue;
+
+    .container{
+      border-radius: 0px;
+      position: relative;
+      top: -150px;
+      max-width: 960px;
+      .row{
+        display: flex;
+        // flex-direction: row-reverse;
+        .business_text.bizDesc-right{
+          display: block;
+        }
+        .m-auto.right-image{
+          display: block;
+          img{
+            margin: 3rem;
+            border-radius: 300px;
+          }
+        }
+        :first-child.business_content{
+          b{
+            font-weight: 500!important;
+          }
+          .catName, .bizName, #keywords>a ,#bizUrl , #bizAddress, #bizPhone, .bizDesc {
+            color: black;
+            font-weight: bolder;
+          }
+          .bizDesc-left{
+            display: none;
+          }
+        }
+        .col-md-6:nth-child(2){
+          display: flex;
+          flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+}

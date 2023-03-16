@@ -1,0 +1,265 @@
+a {
+  text-decoration: none;
+}
+
+.a-first-section {
+  padding: 0px;
+}
+.a-first-section .a-search-section {
+  border-radius: 0px;
+  background-size: cover;
+  padding-top: 5rem;
+  text-align: center;
+  height: 650px;
+}
+.a-first-section .a-search-section .special-color {
+  color: white;
+}
+.a-first-section .a-search-section form {
+  display: none !important;
+  margin: 0px;
+  margin-top: 30px;
+}
+.a-first-section .a-search-section form button {
+  background-color: none !important;
+  color: #8E6E53 !important;
+  border: 0px;
+}
+
+#listingsHome #restOfPage {
+  position: relative;
+  top: -320px;
+}
+#listingsHome #restOfPage .featured_businesses-carouselle {
+  background: none;
+}
+#listingsHome #restOfPage .featured_businesses-carouselle p.title-sm {
+  display: none;
+}
+#listingsHome #restOfPage .featured_businesses-carouselle h2.title_3 {
+  color: white !important;
+  padding-left: 2rem;
+  text-align: left;
+}
+#listingsHome #restOfPage .featured_businesses-carouselle #myCarousel #featuredCustomerList .carousel-item {
+  left: 1rem;
+}
+#listingsHome #restOfPage .featured_businesses-carouselle #myCarousel #featuredCustomerList .carousel-item .pe-md-4 {
+  border-radius: 10px;
+  color: white !important;
+  margin-bottom: 10px;
+  padding: 0px;
+}
+#listingsHome #restOfPage .featured_businesses-carouselle #myCarousel #featuredCustomerList .carousel-item .pe-md-4 .featuredDiv {
+  background: white;
+  padding: 20px;
+  min-height: 200px;
+  border-radius: 10px;
+  color: black;
+}
+#listingsHome #restOfPage .featured_businesses-carouselle #myCarousel #featuredCustomerList .carousel-item .pe-md-4 .featuredDiv a {
+  color: black;
+  text-decoration: none;
+}
+#listingsHome #restOfPage .featured_businesses-carouselle #myCarousel #featuredCustomerList .carousel-item .pe-md-4 .featuredDiv a .b_logo {
+  text-align: center;
+}
+#listingsHome #restOfPage .featured_businesses-carouselle #myCarousel #featuredCustomerList .carousel-item .pe-md-4 .featuredDiv a .b_logo img {
+  width: 85px;
+  height: 85px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+#listingsHome #restOfPage .featured_businesses-carouselle #myCarousel #featuredCustomerList .carousel-item .pe-md-4 .featuredDiv a .b_logo .title_2 {
+  font-size: 1rem;
+}
+#listingsHome #restOfPage .categories_section {
+  padding-top: 50px;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+#listingsHome #restOfPage .categories_section .container .categories_bg .a-category:first-child .title-sm {
+  display: block;
+  text-align: left;
+}
+#listingsHome #restOfPage .categories_section .container .categories_bg .a-category:first-child .title-bg {
+  color: black !important;
+  text-align: left;
+  padding-bottom: 20px;
+}
+#listingsHome #restOfPage .categories_section .container .categories_bg .a-category #mainCategories ul .c_text a {
+  padding: 0px 12px 0px;
+  display: inline-table;
+  border-radius: 50px;
+}
+#listingsHome #restOfPage .categories_section .container .categories_bg .a-category #mainCategories ul .c_text a:hover {
+  background: #2E5E92;
+  color: white;
+}
+#listingsHome #restOfPage #recentAddBusiness {
+  margin-top: 30px;
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+}
+#listingsHome #restOfPage #recentAddBusiness .container .title-sm {
+  color: #2E5E92;
+}
+#listingsHome #restOfPage #recentAddBusiness .container .title-bg {
+  padding-bottom: 20px;
+  text-align: center;
+  color: black;
+}
+#listingsHome #restOfPage #recentAddBusiness .container #mainCustomerList .pe-md-4 {
+  padding: 5px;
+  margin-bottom: 0px;
+  width: 25% !important;
+}
+#listingsHome #restOfPage #recentAddBusiness .container #mainCustomerList .pe-md-4 .mainCustomerDiv {
+  background: white;
+  padding: 20px;
+  min-height: 200px;
+  border-radius: 10px;
+  color: black;
+  border: 1px solid #5D8AFD;
+}
+#listingsHome #restOfPage #recentAddBusiness .container #mainCustomerList .pe-md-4 .mainCustomerDiv a {
+  color: black;
+  text-decoration: none;
+}
+#listingsHome #restOfPage #recentAddBusiness .container #mainCustomerList .pe-md-4 .mainCustomerDiv a .b_logo {
+  text-align: center;
+}
+#listingsHome #restOfPage #recentAddBusiness .container #mainCustomerList .pe-md-4 .mainCustomerDiv a .b_logo img {
+  width: 85px;
+  height: 85px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+#listingsHome #restOfPage #recentAddBusiness .container #mainCustomerList .pe-md-4 .mainCustomerDiv a .b_logo .title_2 {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+#listingsCategory .sub_header_2 .a-search-section {
+  background-size: cover;
+  height: 560px;
+}
+#listingsCategory .sub_header_2 .a-search-section .categoryDiv .homeLink.text-left {
+  color: white !important;
+}
+#listingsCategory .sub_header_2 .a-search-section .categoryDiv .homeLink.text-left .category-item {
+  color: #F6DB02 !important;
+}
+#listingsCategory .sub_header_2 .a-search-section .categoryDiv #categoryName {
+  font-family: Merriweather;
+}
+#listingsCategory .business_name {
+  background: none !important;
+  position: relative;
+  top: -200px;
+}
+#listingsCategory .business_name #catCustomerList {
+  padding: 10px;
+  background: #FFFEFE;
+  border-radius: 5px;
+}
+#listingsCategory .business_name #catCustomerList .col-md-4.pe-md-4 {
+  border-radius: 10px;
+  color: white !important;
+  margin-bottom: 10px;
+  padding: 0px;
+  width: 25% !important;
+}
+#listingsCategory .business_name #catCustomerList .col-md-4.pe-md-4 .CustomerListDiv {
+  background: white;
+  padding: 20px;
+  min-height: 240px;
+  border-radius: 10px;
+  height: 240px;
+  color: black;
+  border: 1px solid #5D8AFD;
+  overflow: hidden;
+}
+#listingsCategory .business_name #catCustomerList .col-md-4.pe-md-4 .CustomerListDiv a {
+  color: black;
+  text-decoration: none;
+}
+#listingsCategory .business_name #catCustomerList .col-md-4.pe-md-4 .CustomerListDiv a .bus_box {
+  text-align: center;
+}
+#listingsCategory .business_name #catCustomerList .col-md-4.pe-md-4 .CustomerListDiv a .bus_box .bus_logo img {
+  width: 85px;
+  height: 85px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+#listingsCategory .business_name #catCustomerList .col-md-4.pe-md-4 .CustomerListDiv a .bus_box .bus_text .first_t h4 {
+  font-size: 12px;
+}
+#listingsCategory .business_name #catCustomerList .col-md-4.pe-md-4 .CustomerListDiv a .bus_box .bus_text .first_t p.pas {
+  font-weight: bolder;
+}
+#listingsCategory .business_name #catCustomerList .col-md-4.pe-md-4 .CustomerListDiv a .bus_box .bus_text .sec_t {
+  position: relative;
+  top: -1rem;
+}
+#listingsCategory .business_name #catCustomerList .col-md-4.pe-md-4 .CustomerListDiv a .bus_box .bus_text .sec_t p.a-domain {
+  color: #8E6E53;
+}
+
+#listingsBusiness .sub_header_2 .a-search-section.relative.grid-sys {
+  display: flex;
+  flex-direction: row-reverse;
+  background-size: cover;
+  height: 530px;
+}
+#listingsBusiness .sub_header_2 .a-search-section.relative.grid-sys:first-child > div:first-child {
+  width: 65%;
+  text-align: left;
+  padding-top: 100px;
+}
+#listingsBusiness .sub_header_2 .a-search-section.relative.grid-sys:first-child > div:first-child h1#bizTitle {
+  margin-left: 10px;
+  padding-left: 0px;
+}
+#listingsBusiness .sub_header_2 .a-search-section.relative.grid-sys:first-child > div:first-child .categoryDiv.mt-0 {
+  margin-top: 50px !important;
+  margin-left: 10px;
+}
+#listingsBusiness .sub_header_2 .a-search-section.relative.grid-sys:first-child > div:first-child .categoryDiv.mt-0 .homeLink {
+  color: white !important;
+}
+#listingsBusiness .sub_header_2 .a-search-section.relative.grid-sys:first-child > div:first-child .categoryDiv.mt-0 .category-item {
+  color: white !important;
+}
+#listingsBusiness .sub_header_2 .a-search-section.relative.grid-sys .m-auto {
+  margin-right: 0px !important;
+}
+#listingsBusiness .business_name_section_a .container {
+  border-radius: 20px;
+  position: relative;
+  top: -200px;
+}
+#listingsBusiness .business_name_section_a .container .row {
+  display: flex;
+}
+#listingsBusiness .business_name_section_a .container .row .business_text.bizDesc-right {
+  display: block;
+}
+#listingsBusiness .business_name_section_a .container .row .m-auto.right-image {
+  display: none;
+}
+#listingsBusiness .business_name_section_a .container .row .m-auto.right-image img {
+  margin-top: 13rem;
+}
+#listingsBusiness .business_name_section_a .container .row :first-child.business_content b {
+  font-weight: 500 !important;
+}
+#listingsBusiness .business_name_section_a .container .row :first-child.business_content .catName, #listingsBusiness .business_name_section_a .container .row :first-child.business_content .bizName, #listingsBusiness .business_name_section_a .container .row :first-child.business_content #keywords > a, #listingsBusiness .business_name_section_a .container .row :first-child.business_content #bizUrl, #listingsBusiness .business_name_section_a .container .row :first-child.business_content #bizAddress, #listingsBusiness .business_name_section_a .container .row :first-child.business_content #bizPhone, #listingsBusiness .business_name_section_a .container .row :first-child.business_content .bizDesc {
+  color: black;
+  font-weight: bolder;
+}
+#listingsBusiness .business_name_section_a .container .row :first-child.business_content .bizDesc-left {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

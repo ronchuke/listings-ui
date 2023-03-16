@@ -1,0 +1,214 @@
+.a-search-section .special-color{
+  color: #C84D4D!important;
+}
+.a-search-section .font-bg{
+  color: black!important;
+}
+.featured_businesses .title-sm{
+  color: #C84D4D!important;
+}
+.b_logo img {
+  width: 85px;
+  height: 85px;
+  border-radius: 100px;
+  margin-bottom:10px;
+}
+.bus_logo img{
+  width: 85px;
+  height: 85px;
+  border-radius: 100px;
+}
+.business_name .CategoryList{
+  display: none!important;
+}
+
+
+.featured_businesses .text-white{
+  /* color: black!important; */
+}
+#featuredCustomerList .pe-md-4 {
+  
+  
+  border-radius: 10px;
+  color: white !important;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+#featuredCustomerList .pe-md-4 .featuredDiv{
+ 
+  background: #404249;
+  padding: 20px;
+  min-height: 283px;
+  border-radius: 10px;
+  color: black;
+}
+#featuredCustomerList .pe-md-4 a {
+  color: white !important;
+  text-decoration: none;  
+}
+#featuredCustomerList .pe-md-4 .title_2 {
+  font-size:20px;
+}
+
+.a-category {
+  padding-top:40px;
+  padding-bottom:40px;
+  display: block;
+}
+/* #mainCategories {
+  width: 85%;
+} */
+#mainCategories li {
+  list-style: none !important;
+}
+
+#mainCategories a {
+  color: black;
+  text-decoration:none;
+}
+#mainCategories a:hover{
+  background-color: #C84D4D;
+}
+#mainCustomerList .pe-md-4 {
+  
+  padding:20px;
+  
+  color: black !important;
+  margin-bottom:10px;
+  text-align:center;
+ 
+}
+.first_t>h4{
+  word-wrap: break-word;  
+}
+.first_t{
+  min-height: 8rem;
+  max-height: 8rem;
+  overflow: hidden;
+}
+#mainCustomerList .mainCustomerDiv {
+  background: #404249;
+  border-radius: 10px;
+  /* border-bottom: 1px solid lightgray; */
+  min-height: 240px;
+  padding-top: 20px;
+}
+#mainCustomerList .pe-md-4 a{
+  color: white !important;
+  text-decoration: none;
+}
+#mainCustomerList .pe-md-4 .title_2 {
+  font-size:20px;
+  color: white;
+}
+
+
+
+#recentAddBusiness .title-bg {
+  color: #ffffff !important;
+  /* text-align: left; */
+}#recentAddBusiness .title-sm {
+  color: #C84D4D !important;
+  /* text-align: left; */
+}
+
+#listingsBusiness #bizTitle {
+  display:none;
+}
+#listingsBusiness #bizLogo {
+  display: none;
+}
+#listingsBusiness .categoryDiv {
+  margin-left: 70px !important;
+}
+#listingsBusiness .categoryDiv .text-white {
+  color: black !important;
+}
+.title-sm{
+  color: #C84D4D!important;
+}
+#mainCategories a{
+  border: 1px solid #C84D4D;
+}
+#recentAddBusiness{
+  padding-top: 30px;
+  background-color: #212121;
+}
+@media (min-width: 768px){
+  .col-md-4 {
+      flex: 0 0 auto;
+      width: 25%;
+  }
+}
+/* ////////////////////////// */
+.bizDesc-right{
+  display: none;
+}
+.right-image{
+  display: block;
+  padding-top: 8rem;
+}
+.bizLogo{
+  border-radius: 20px;
+  border: 0px!important;
+}
+.a-search-section>div{
+  display: none;
+}
+.a-search-section>div:first-child{
+  display: block;
+}
+#bizTitle{
+  display: none;
+}
+.business_name_section_a .container{
+  top: -250px;
+}
+#listingsBusiness .category-item{
+  color: black;
+}
+/* //////////////////////////// */
+#listingsCategory .a-search-section .font-bg{
+  text-transform: uppercase;
+  color: #C84D4D!important;
+}
+#listingsCategory .business_name .CategoryList{
+  display: block!important;
+}
+#listingsCategory .business_name{
+  background-color: #212121;
+}
+#listingsCategory .pe-md-4 {
+  
+  padding:20px;
+
+  color: black !important;
+  margin-bottom:10px;
+  text-align:center;
+  
+}
+#catCustomerList .pe-md-4 a{
+  color: black !important;
+  text-decoration: none;
+}
+#listingsCategory .pe-md-4 a{
+  color: white !important;
+  text-decoration: none;
+}
+
+#catCustomerList .pe-md-4 .title_2 {
+  font-size:20px;
+  color: #5f3c1b;
+
+  text-decoration: none;
+}
+#catCustomerList .CustomerListDiv {
+  padding-top:20px;
+  background: #404249;
+  /* border-bottom: 1px solid lightgray; */
+  border-radius: 10px;
+  height: 280px;
+}
+#categoryLink>.catName{
+  color: #C84D4D!important;
+}

@@ -1,0 +1,702 @@
+<link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link
+        href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+/>
+
+<link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous"
+/>
+<!--    <script-->
+<!--            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"-->
+<!--            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="-->
+<!--            crossorigin="anonymous"-->
+<!--            referrerpolicy="no-referrer"-->
+<!--    ></script>-->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+></script>
+</head>
+<div class="bizinfo sm_responsive a-container" style="min-height: 800px">
+    <!--    <div class="a-header">-->
+    <!--        <div class="a-logo">-->
+
+    <!--        </div>-->
+    <!--    </div>-->
+    <div class="a-first-section">
+        <div class="a-search-section">
+            <div>
+                <p class="font-bg a-margin-minus-20 brandTitle"><span class="special-color text1"> </span><span
+                        class="text2"></span></p>
+                <!--                <p class="font-bg"></p>-->
+            </div>
+            <form class="d-flex">
+                <input
+                        id="search"
+                        class="form-control me-0"
+                        type="text"
+                        placeholder="Search..."
+                        onchange="ajaxSearch()"
+                        onkeydown="ajaxSearch()"
+                />
+                <button
+                        class="btn btn-outline-success"
+                        type="button"
+                        onclick="ajaxSearch()"
+                >
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="listingsHome">
+        <div class="search_section">
+            <section class="featured_businesses">
+                <div class="container">
+                    <div class="row" id="searchResults"></div>
+                </div>
+            </section>
+        </div>
+
+        <div id="restOfPage">
+            <section class="featured_businesses a-featured-customers featured_businesses-carouselle">
+                <p class="title-sm">Business</p>
+                <h2 class="title_3 title-bg text-white">Featured Customers</h2>
+                <div class="container">
+                    <div class="row relative" id="featuredCustomerList"></div>
+                </div>
+            </section>
+
+            <section class="categories_section">
+                <div class="container">
+                    <div class="categories_bg">
+                        <div class="row a-category">
+                            <div>
+                                <p class="title-sm">Business</p>
+                                <h3 class="title_3  title-bg">Categories</h3>
+                            </div>
+                            <div id="mainCategories"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured_businesses" id="recentAddBusiness">
+                <div class="container">
+                    <p class="title-sm">Business</p>
+                    <h2 class="title_3 title-bg">Recently Added</h2>
+                    <div class="row" id="mainCustomerList"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="listingsCategory" style="display: none">
+        <section class="sub_header_2">
+            <div class="a-search-section relative">
+                <p class="categoryDiv">
+                    <a class="homeLink text-left" href="">Home
+                        <!--                       <span class="category-item"> / Category</span>-->
+                    </a>
+                    <br/>
+                    <span class="font-bg" id="categoryName"></span>
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="business_name">
+            <div class="container">
+                <p class="CategoryList">Category List</p>
+                <div class="row" id="catCustomerList">
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <div id="listingsBusiness" style="display: none">
+        <section class="sub_header_2">
+            <div class="a-search-section relative grid-sys">
+                <div>
+                    <p class="categoryDiv mt-0">
+                        <a class="homeLink" href="">Home</a>
+                        <span class="category-item"> / </span>
+                        <a id="categoryLink" href=""><span class="catName"></span></a>
+                    </p>
+                    <h1 id="bizTitle" class="font-bg bizDomain text-left"></h1>
+                </div>
+                <div class="m-auto">
+                    <img src="" class="bizLogo" height="150"/>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="business_name_section_a">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="business_content">
+                            <p><b>Category: </b>
+                            <p class="catName text-black"></p></p>
+                            <p><b>Business Name: </b>
+                            <p class="bizName"></p></p>
+                            <p><b>Website: </b>
+                            <p><a href="" id="bizUrl"></a></p></p>
+                            <p><b>Main Keywords: </b>
+                            <p id="keywords"></p></p>
+                            <p><b>Address: </b>
+                            <p><a href="" id="bizAddress"></a></p></p>
+                            <p><b>Phone: </b>
+                            <p><a href="" id="bizPhone"></a></p></p>
+                            <div class="bizDesc-left"><b>Description: </b>
+                                <p class="bizDesc "></p></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="business_text bizDesc-right">
+                            <b>Description: </b>
+                            <p class="bizDesc "></p>
+                        </div>
+                        <div class="m-auto right-image">
+                            <img class="bizLogo" height="150"/>
+                            <!-- <div style="background: red; width: 150px; height: 150px;"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        if (typeof jQuery == 'undefined') {
+            console.log('adding jquery')
+            document.write('<script src=\'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\'></' + 'script>');
+        }
+
+        var apiUrl = 'https://www.rabbitseo.com/';
+        let sourceSiteDir;
+        let bizParameter = "biz";
+        // var apiUrl = "http://localhost:8080/";
+
+        function removeHttp(url) {
+            return url.replace(/^https?:\/\//, '');
+        }
+
+        function minifyDomainUrl(url) {
+            // console.log('minifyDomainUrl ' + url);
+            url = removeHttp(url.toString());
+            url = removeLastSlash(url.toString());
+            // url = encodeURIComponent(url);
+            // console.log('minifyDomainUrl return ' + url);
+            return url;
+        }
+
+        function ajaxSearch() {
+            const val = $('#search').val();
+            console.log('searchVal ' + val);
+            if (val.length > 1) {
+                $.getJSON(apiUrl + 'getMyJsonSearchPublishLinksGuest?source=' + sourceSite + '&limit=10&search=' + val, function (json) {
+                    console.log('getMyJsonSearchPublishLinks ' + JSON.stringify(json));
+                    json = JSON.parse(json.data);
+                    var html = '<h2 class="title_3">Search Result</h2>';
+                    for (let i = 0; i < json.length; i++) {
+                        const item = json[i];
+                        html += '<div class="col-md-4 pe-md-4"><a href="javascript:showSingleBusiness(\'' + minifyDomainUrl(item['domain']) + '\')">\n' +
+                            '                    <div class="icon_box">\n' +
+                            '                        <div class="b_logo">\n' +
+                            '                            <img alt="No Logo"  width="100" onerror="this.onerror=null; this.src=sourceSiteDir + \'/images/alt.png\'" src="https://www.rabbitseo.com/UserLogo?pdfImage=true&userId=' + item['userId'] + '"/>\n' +
+                            '                            <h3 class="title_2">' + item['name'] + '</h3>\n' +
+                            '                            <p class="big_pra">' + item['category'] + '</p>\n' +
+                            '                        </div>\n' +
+                            '                    </div>\n' +
+                            '                </a></div>';
+                    }
+                    $('#searchResults').html(html);
+                    $('#restOfPage').html('');
+                });
+            }
+        }
+
+        function createCarousel(featuredCustomerList) {
+            let featuredCustomerHtml = '';
+            for (let i = 0; i < featuredCustomerList.length; i++) {
+                const item = featuredCustomerList[i];
+                featuredCustomerHtml += `
+                <div class="carousel-item">
+                    <div class="col-md-3 pe-md-4">
+                    <div class="featuredDiv">
+                        <a href="javascript:showSingleBusiness('${minifyDomainUrl(item['domain'])}')">
+                        <div class="icon_box">
+                            <div class="b_logo">
+                            <img alt="No Logo" height="80" onerror="this.onerror=null; this.src=sourceSiteDir + '/images/alt.png'"
+                            src="https://www.rabbitseo.com/UserLogo?pdfImage=true&userId=${item['userId']}">
+                            <h3 class="title_2">${minifyDomainUrl(item['domain'])}</h3>
+                            <p class="big_pra">${item['category']}</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                `;
+
+            }
+            $('#featuredCustomerList').html(featuredCustomerHtml);
+            $('#featuredCustomerList').addClass('carousel-inner')
+            $('#featuredCustomerList').parent().addClass('carousel').addClass('slide').attr('data-bs-ride', "carousel");
+            $('#featuredCustomerList').parent().attr('id', 'myCarousel')
+            $('#featuredCustomerList').parent().append(`
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>`);
+            $('.carousel .carousel-item').each(function () {
+                $('#myCarousel').carousel({
+                    interval: 2000000000
+                })
+                var minPerSlide = 4;
+                var next = $(this).next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
+                }
+                next.children(':first-child').clone().appendTo($(this));
+
+                for (var i = 0; i < minPerSlide; i++) {
+                    next = next.next();
+                    if (!next.length) {
+                        next = $(this).siblings(':first');
+                    }
+                    next.children(':first-child').clone().appendTo($(this));
+                }
+            });
+
+
+            $('#featuredCustomerList').children().eq(0).addClass('active');
+        }
+
+        function loadPublishLinks() {
+            const url = apiUrl + 'getMyJsonAllPublishLinksGuest?source=' + sourceSite + '&limit=24';
+            console.log('url is ' + url);
+            $.getJSON(url, function (json) {
+                // console.log('getMyJsonAllPublishLinksGuest ' + JSON.stringify(json.obj));
+                let featuredCustomerList = json.obj;
+                json = JSON.parse(json.data);
+                var html = '';
+                for (let i = 0; i < json.length; i++) {
+                    const item = json[i];
+                    console.log('sourceSite ' + sourceSite);
+                    console.log('biz=' + minifyDomainUrl(item['domain']));
+                    html += '<div class="col-md-4 pe-md-4"><div class="mainCustomerDiv"><a href="javascript:showSingleBusiness(\'' + minifyDomainUrl(item['domain']) + '\')">\n' +
+                        '                    <div class="icon_box">\n' +
+                        '                        <div class="b_logo">\n' +
+                        '                            <img alt="No Logo"  width="100" onerror="this.onerror=null; this.src=sourceSiteDir + \'/images/alt.png\'" src="https://www.rabbitseo.com/UserLogo?pdfImage=true&userId=' + item['userId'] + '"/>\n' +
+                        '                            <div><h3 class="title_2">' + getDomainText(item) + '</h3>\n' +
+                        // '                            <div><h3 class="title_2">' + item['name'] + '</h3>\n' +
+                        '                            <p class="big_pra">' + item['category'] + '</p>\n' +
+                        '                        </div></div>\n' +
+                        '                    </div>\n' +
+                        '                </a></div></div>';
+                    $('#mainCustomerList').html(html);
+                }
+                if (false) {
+                    createCarousel(featuredCustomerList);
+                } else {
+                    $('.featured_businesses-carouselle').hide();
+                }
+            });
+        }
+
+        function loadCategories() {
+            $.getJSON(apiUrl + 'getMyJsonAllPublishCatsGuest', function (json) {
+                console.log('getMyJsonAllPublishCatsGuest ' + JSON.stringify(json));
+                json = JSON.parse(json.data);
+                var html = '<ul>';
+                for (let i = 0; i < json.length; i++) {
+                    const item = json[i];
+                    html += '<span class="c_text"><a class="" href="javascript:showCat(\'' + encodeURIComponent(item) + '\')">' + item + '</a></span>';
+                    // html += '<span class="c_text"><a class="" href="javascript:showCat(\'' + encodeURIComponent(item) + '\')"><span class="c_img"><img src="images/c_icon.png" alt=""></span>' + item + '</a></span>';
+                }
+                html += '</ul>';
+                $('#mainCategories').html(html);
+            });
+        }
+
+        function getCatUrl(category) {
+            // let url = '/' + 'getMyJsonAllPublishLinksGuest?source=' + sourceSite + '&limit=100';
+            let url = apiUrl + 'getMyJsonAllPublishLinksGuest?source=' + sourceSite + '&limit=200';
+            if (category) {
+                url += '&category=' + encodeURIComponent(category);
+            }
+            return url;
+        }
+
+        function getUrlParameter(sParam) {
+            let retVal = false;
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    bizParameter = sParam;
+                    // console.log('sParameterName[0] ' + sParameterName[0])
+                    // console.log('sParameterName[1] ' + sParameterName[1])
+                    retVal = sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            console.log('getUrlParameter ' + sParam + ': ' + retVal);
+            return retVal;
+        }
+
+        function getDomainText(item) {
+            return getHostname(item['domain']);
+        }
+
+        function getListByCat(category) {
+            console.log('start getListByCat');
+            // var category = location.search.slice(1, location.search.length);
+            let url = getCatUrl(category);
+            category = decodeURIComponent(category);
+            $('#categoryName').html(category);
+            console.log('getListByCat url ' + url);
+            $.getJSON(url, function (json) {
+                console.log('getMyJsonAllPublishLinksGuest ' + JSON.stringify(json));
+                json = JSON.parse(json.data);
+                var html = '';
+                for (let i = 0; i < json.length; i++) {
+                    const item = json[i];
+                    html +=
+                        '                <div class="col-md-4 pe-md-4"><div class="CustomerListDiv"><a href="javascript:showSingleBusiness(\'' + minifyDomainUrl(item['domain']) + '\')">\n' +
+                        '                    <div class="bus_box">\n' +
+                        '                        <div class="bus_logo">\n' +
+                        '                            <img alt="No Logo"  width="100" onerror="this.onerror=null; this.src=sourceSiteDir + \'/images/alt.png\'" src="https://www.rabbitseo.com/UserLogo?pdfImage=true&userId=' + item['userId'] + '"/>\n' +
+                        '                            \n' +
+                        '                        </div>\n' +
+                        '                        <div class="bus_text">\n' +
+                        '                           <div class="first_t">\n' +
+                        '                                <h4>' + item['name'] + '</h4>\n' +
+                        '                                <p class="pas">' + item['category'] + '</p>\n' +
+
+                        '                           </div>\n' +
+                        '                           <div class="sec_t">\n' +
+                        '                                <p class="pa a-domain">' + getDomainText(item) + '</p>\n' +
+                        '                            </div>\n' +
+                        '                           \n' +
+                        '                        </div>\n' +
+
+                        '                    </div>\n' +
+                        '                </a></div></div>';
+                }
+                $('#catCustomerList').html(html);
+            });
+        }
+
+        function getSingleBusiness(customer) {
+            // const customer = location.search.slice(1, location.search.length);
+            $.getJSON(apiUrl + 'getMyJsonSinglePublishLinksGuest?source=' + sourceSite + '&name=' + customer, function (json) {
+                console.log('getMyJsonAllPublishLinksGuest ' + JSON.stringify(json));
+                var item = JSON.parse(json["data"]);
+                var html = '';
+                if (item) {
+                    $('.catName').html(item['category']);
+                    $('.bizDomain').html(getDomainText(item));
+                    $('.bizName').html(item['name']);
+                    $('#categoryLink').attr('href', "javascript:showCat(\'' + encodeURIComponent('" + item['category'] + "') + '\')");
+                    // $('#categoryLink').attr('href', "category.html?" + item['category']);
+                    $('#bizUrl').attr('href', item['domain']);
+                    $('#bizUrl').html(item['domain']);
+                    $('#bizAddress').html(item['address']);
+                    $('#bizPhone').html(item['phone']);
+                    $('.bizDesc').html(item['description']);
+                    addKeywords(item);
+                    if (item['hasLogo']) {
+                        $('.bizLogo').attr('src', 'https://www.rabbitseo.com/UserLogo?pdfImage=true&userId=' + item['userId']);
+                        $('.bizLogo').attr('onerror', 'this.onerror=null; this.src="' + sourceSiteDir + '/images/alt.png"');
+                    } else {
+                        console.log('set no img icon to src: ' + sourceSiteDir + '/images/alt.png')
+                        $('.bizLogo').hide();
+                        // $('.bizLogo').attr('src', sourceSiteDir + '/images/alt.png');
+                    }
+                    // html += '<div class="jumbotron jumbotron-fluid">\n' +
+                    //     '  <div class="toggle_container activeToggle">\n' +
+                    //     '    <h1 class="display-4 toggle_title">' + item['name'] + '</h1>\n' +
+                    //     '    <div class="toggle_content">\n' +
+                    //     '    <p class="lead"><a href="' + item['domain'] + '" target="_blank">' + item['domain'] + '</a><br /></p>\n' +
+                    //     (item['category'] && String(item['category']).length > 1 ? '    <p class="lead">Category: ' + item['category'] + '</p>\n' : '') +
+                    //     (item['description'] && String(item['description']).length > 1 ? '    <p class="lead">Description: ' + item['description'] + '</p>\n' : '') +
+                    //     (item['address'] && String(item['address']).length > 1 ? '    <p class="lead">Address: ' + item['address'] + '</p>\n' : '') +
+                    //     (item['phone'] && String(item['phone']).length > 1 ? '    <p class="lead">Phone: ' + item['phone'] + '</p>\n' : '') +
+                    //     (item['keyword'] && String(item['keyword']).length > 1 ? '    <p class="lead">Main Keyword: ' + item['keyword'] + '</p>\n' : '') +
+                    //     '  </div>\n' +
+                    //     '  </div>\n' +
+                    //     '</div>';
+                    // $('#ourTitle').html(item['name']);
+                } else {
+                    html += 'No business found'
+                }
+                $('#customerDiv').html(html);
+            });
+        }
+
+        function addKeywords(item) {
+            if (String(item['keyword']).length > 1 && String(item['keyword']) !== 'undefined') {
+                const myArray = String(item['keyword']).split(",");
+                if (myArray.length > 0) {
+                    const href = item['href'] ? item['href'] : item['domain'];
+                    $('#keywords').html("<a href='" + href + "' target='_blank'>" + myArray[0] + "</a>");
+                    if (myArray.length > 1) {
+                        $('#keywords').html($('#keywords').html() + " <a href='" + href + "' target='_blank'>" + myArray[1] + "</a>");
+                    }
+                    if (myArray.length > 2) {
+                        $('#keywords').html($('#keywords').html() + " <a href='" + href + "' target='_blank'>" + myArray[2] + "</a>");
+                    }
+                }
+            }
+        }
+
+        function handleSearch() {
+            if (location.href.indexOf("doSearch") !== -1) {
+                const searchString = location.href.substr(location.href.indexOf("doSearch") + 9);
+                console.log('searchString ' + searchString);
+                $('#search').val(searchString);
+                ajaxSearch();
+            }
+        }
+    </script>
+    <script>
+        function showSingleBusiness(bizVal) {
+            // window.location.searchParams.set("biz", bizVal);
+            window.history.pushState({}, bizVal, "?" + bizParameter + "=" + encodeURIComponent(bizVal));
+
+            getSingleBusiness(bizVal);
+            $('#listingsCategory').hide();
+            $(".a-first-section").hide();
+            $('#listingsHome').hide();
+            $('#listingsBusiness').show();
+        }
+
+        function showCat(catVal) {
+            window.history.pushState({}, catVal, "?cat=" + encodeURIComponent(catVal));
+            getListByCat(catVal);
+            $('#listingsBusiness').hide();
+            $('#listingsHome').hide();
+            $(".a-first-section").hide();
+            $('#listingsCategory').show();
+        }
+
+        $(document).ready(function () {
+            // $('#customStyle').load('style.css');
+            console.log('location.search ' + location.search);
+            var catVal = getUrlParameter("cat");
+            console.log('catVal ' + catVal)
+            var bizVal = getUrlParameter("biz");
+            if (!bizVal) {
+                bizVal = getUrlParameter("val");
+            }
+            if (!bizVal) {
+                bizVal = getUrlParameter("domain");
+            }
+            if (!bizVal) {
+                bizVal = getUrlParameter("site");
+            }
+            if (!bizVal) {
+                bizVal = getUrlParameter("id");
+            }
+            if (!bizVal) {
+                bizVal = getUrlParameter("website");
+            }
+            console.log('bizParameter ' + bizParameter)
+            console.log('bizVal ' + bizVal)
+            sourceSite = location.href;
+            let themeCss;
+            let baseCss;
+            if (sourceSite.indexOf("?") !== -1) {
+                sourceSite = location.href.slice(0, sourceSite.indexOf("?"));
+            }
+            console.log('sourceSite ' + sourceSite);
+            // console.log('hostname is ' + getHostname("https://newyorkmagazine.co.uk/online-business/"));
+            if (sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com')) {
+                // if (true || sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com')) {
+                    sourceSite = 'newyorkmagazine.co.uk';
+                //     sourceSite = 'theamericanreporters.com';
+                // sourceSite = 'newspronto.co.uk';
+                //     sourceSite = 'world-gd.com';
+                //     sourceSite = 'www.dailylondonpost.co.uk';
+                // sourceSite = 'thegiantbomb.com';
+                //     sourceSite = 'forbesmagazine.co.uk';
+                //     sourceSite = 'usatodayjournal.com';
+                //     sourceSite = 'bigtimes.co.uk';
+                //     sourceSite = 'ipsnews.com.au';
+                //     sourceSite = 'australianjournal.com.au';
+                sourceSite = 'dailynewsau.com.au';
+                // sourceSite = 'dailymagazine.com.au';
+                // sourceSite = 'cbdkings.net';
+                // sourceSite = 'pronaturalscbdoil.net';
+                // sourceSite = 'cbdoilpro.net';
+                // sourceSite = 'hempcbdchoice.com';
+                // sourceSite = 'cbdbakeshops.com';
+                sourceSite = getHostname(sourceSite.toString());
+                sourceSiteDir = sourceSite;
+                baseCss = '<link rel="stylesheet" href="baseStyle.css" type="text/css" />';
+
+                // $('.featured_businesses-carouselle').hide();
+            } else {
+                // sourceSite = removeHttp(sourceSite.toString());
+                sourceSite = getHostname(sourceSite.toString());
+                console.log('hostname is ' + sourceSite)
+                // sourceSite = sourceSite.toString().replaceAll("listings/", "");
+                sourceSite = removeLastSlash(sourceSite.toString());
+                sourceSiteDir = apiUrl + 'listings/' + sourceSite;
+                console.log('final sourceSite ' + sourceSite);
+                baseCss = '<link rel="stylesheet" href="' + apiUrl + 'listings/baseStyle.css" type="text/css" />';
+                $('.featured_businesses-carouselle').hide();
+            }
+
+            console.log('sourceSiteDir ' + sourceSiteDir);
+            console.log('adding baseCss ' + baseCss);
+
+            themeCss = sourceSiteDir + '/css/style.css';
+            $('head').append(baseCss);
+            console.log('adding theme css ' + themeCss);
+            $('head').append('<link rel="stylesheet" href="' + themeCss + '" type="text/css" />');
+
+            try {
+                $.ajax({
+                    url: themeCss,
+                    type: 'HEAD',
+                    error: function () {
+                        // alert(2);
+                        console.log('theme not found, adding deafult theme css ' + themeCss);
+                        console.log('replace on ' + themeCss + ' sourceSite ' + sourceSite + ' with dailylondon');
+                        themeCss = themeCss.replace(sourceSite, 'dailylondonpost.co.uk');
+                        console.log('new themeCss ' + themeCss);
+                        themeCss = '<link rel="stylesheet" href="' + themeCss + '" type="text/css" />';
+                        $('head').append(themeCss);
+                    },
+                    success: function () {
+                        // themeCss = '<link rel="stylesheet" href="' + themeCss + '" type="text/css" />';
+                    }
+                });
+            } catch (e) {
+            }
+
+            $('.a-search-section').css('background-image', 'url(\'' + sourceSiteDir + '/images/background.png\')');
+            let siteThemes = [];
+            siteThemes['bigtimes.co.uk'] = '1';
+            siteThemes['dailylondonpost.co.uk'] = '2';
+            siteThemes['forbesmagazine.co.uk'] = '3';
+            siteThemes['ipsnews.com.au'] = '4';
+            siteThemes['newspronto.co.uk'] = '5';
+            siteThemes['newyorkmagazine.co.uk'] = '6';
+            siteThemes['theamericanreporters.com'] = '7';
+            siteThemes['thegiantbomb.com'] = '8';
+            siteThemes['usatodayjournal.com'] = '9';
+            siteThemes['world-gd.com'] = '10';
+
+            let siteTitles = [];
+            let titles = [];
+            titles.push('Maximizing your online Exposure');
+            titles.push('Publish your Website');
+            titles.push('Drive more Traffic');
+            titles.push('YOUR BUSINESS DATABASE');
+            titles.push('Modern listings for small businesses');
+            titles.push('DISCOVER Your Business');
+            titles.push('Listings for Small Medium Businesses');
+            siteTitles['theamericanreporters.com'] = 'Maximizing your online Exposure';
+            siteTitles['the-index.biz'] = 'YOUR BUSINESS DATABASE';
+            siteTitles['premium-biz.com'] = 'Modern listings for small businesses';
+            siteTitles['smb-listing.com'] = 'DISCOVER Your Business';
+            siteTitles['onlinebusinesses.site'] = 'Online Businesses';
+            siteTitles['bizweb.info'] = 'Listings for Small Medium Businesses';
+
+            let currTitle = siteTitles[sourceSite];
+            if (!currTitle) {
+                currTitle = titles.at(Math.floor(Math.random() * titles.length))
+            }
+            let currTheme = siteThemes[sourceSite];
+            if (!currTheme) {
+                currTheme = Math.floor(Math.random() * siteThemes.length);
+            }
+            let firstWord = currTitle.split(" ")[0]
+            let restTitle = currTitle.replace(firstWord, '');
+            $('p.brandTitle span.text1').html(firstWord + ' ');
+            $('p.brandTitle span.text2').html(restTitle);
+
+            // prod
+            // $('head').append('<link rel="stylesheet" href="' + apiUrl + '/listings/' + sourceSite + '/css/style.css" type="text/css" />');
+            console.log('final sourceSite ' + sourceSite);
+            console.log('set homeLink to ' + location.href.split("?")[0])
+            $('.homeLink').attr('href', location.href.split("?")[0]);
+            if (bizVal || catVal) {
+                if (catVal) {
+                    showCat(catVal);
+                } else if (bizVal) {
+                    showSingleBusiness(bizVal);
+                } else {
+                    loadMain();
+                }
+            } else {
+                loadMain();
+            }
+
+            handleSearch();
+        });
+
+        function getHostname(url) {
+            console.log('getHostname is ' + url);
+            try {
+                url = new URL(url).hostname;
+            } catch (e) {
+                url = minifyDomainUrl(url);
+            }
+            url = url.replace("www.","");
+            console.log('getHostname final is ' + url);
+            return url;
+        }
+
+        function loadMain() {
+            loadPublishLinks();
+            console.log("start");
+            loadCategories();
+        }
+
+        function removeLastSlash(site) {
+            return site.replace(/\/$/, "");
+        }
+
+        $(document).on("keyup keypress", 'form input[type="text"]', function (e) {
+            if (e.which == 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        $(window).bind("popstate", function () {
+            console.log('popstate')
+            window.location = location.href
+        });
+    </script>
+</div>
