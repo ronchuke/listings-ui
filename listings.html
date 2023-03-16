@@ -191,10 +191,23 @@
         }
 
         var apiUrl = 'https://www.rabbitseo.com/';
-        let sourceSiteDir;
+        let sourceSiteDir, sourceSiteImagesDir;
         let bizParameter = "biz";
+        let siteThemes = [];
+        let themesCssCount = 10;
+        let themesImagesCount = 24;
+        const numbers = {
+            '.': 0, 'a':  1, 'b':  2, 'c':  3, 'd':  4, 'e':  5, 'f':  6, 'g':  7, 'h': 8,  'i':  9,
+            'j': 10, 'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18,
+            's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26
+        };
         // var apiUrl = "http://localhost:8080/";
 
+        function getSumLetters(str) {
+            str = str.toLowerCase();
+            let sum = [...str].map(c => numbers[c] || 0).reduce((a, b) => a + b, 0);
+            return sum;
+        }
         function removeHttp(url) {
             return url.replace(/^https?:\/\//, '');
         }
@@ -435,9 +448,9 @@
                     addKeywords(item);
                     if (item['hasLogo']) {
                         $('.bizLogo').attr('src', 'https://www.rabbitseo.com/UserLogo?pdfImage=true&userId=' + item['userId']);
-                        $('.bizLogo').attr('onerror', 'this.onerror=null; this.src="' + sourceSiteDir + '/images/alt.png"');
+                        $('.bizLogo').attr('onerror', 'this.onerror=null; this.src="' + sourceSiteImagesDir + '/images/alt.png"');
                     } else {
-                        console.log('set no img icon to src: ' + sourceSiteDir + '/images/alt.png')
+                        console.log('set no img icon to src: ' + sourceSiteImagesDir + '/images/alt.png')
                         $('.bizLogo').hide();
                         // $('.bizLogo').attr('src', sourceSiteDir + '/images/alt.png');
                     }
@@ -508,6 +521,20 @@
             $('#listingsCategory').show();
         }
 
+        function getCurrThemeDir() {
+            console.log('find theme for sourceSite ' + sourceSite)
+            let currTheme = siteThemes[sourceSite];
+            if (!currTheme) {
+                console.log('siteThemes.length ' + themesCssCount)
+                currTheme = getSumLetters(sourceSite) % themesCssCount;
+                sourceSiteImagesDir = getSumLetters(sourceSite) % themesImagesCount;
+                // currTheme = Math.floor(Math.random() * themesCssCount) + 1;
+                console.log('theme not found, random theme ' + currTheme);
+            }
+            console.log('getCurrThemeDir ' + currTheme)
+            return currTheme;
+        }
+
         $(document).ready(function () {
             // $('#customStyle').load('style.css');
             console.log('location.search ' + location.search);
@@ -532,6 +559,17 @@
             console.log('bizParameter ' + bizParameter)
             console.log('bizVal ' + bizVal)
             sourceSite = location.href;
+            siteThemes['bigtimes.co.uk'] = '1';
+            siteThemes['dailylondonpost.co.uk'] = '2';
+            siteThemes['forbesmagazine.co.uk'] = '3';
+            siteThemes['ipsnews.com.au'] = '4';
+            siteThemes['newspronto.co.uk'] = '5';
+            siteThemes['newyorkmagazine.co.uk'] = '6';
+            siteThemes['theamericanreporters.com'] = '7';
+            siteThemes['thegiantbomb.com'] = '8';
+            siteThemes['usatodayjournal.com'] = '9';
+            siteThemes['world-gd.com'] = '10';
+
             let themeCss;
             let baseCss;
             if (sourceSite.indexOf("?") !== -1) {
@@ -541,7 +579,7 @@
             // console.log('hostname is ' + getHostname("https://newyorkmagazine.co.uk/online-business/"));
             if (sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com')) {
                 // if (true || sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com')) {
-                    sourceSite = 'newyorkmagazine.co.uk';
+                sourceSite = 'newyorkmagazine.co.uk';
                 //     sourceSite = 'theamericanreporters.com';
                 // sourceSite = 'newspronto.co.uk';
                 //     sourceSite = 'world-gd.com';
@@ -552,15 +590,21 @@
                 //     sourceSite = 'bigtimes.co.uk';
                 //     sourceSite = 'ipsnews.com.au';
                 //     sourceSite = 'australianjournal.com.au';
-                sourceSite = 'dailynewsau.com.au';
+                // sourceSite = 'dailynewsau.com.au';
                 // sourceSite = 'dailymagazine.com.au';
                 // sourceSite = 'cbdkings.net';
-                // sourceSite = 'pronaturalscbdoil.net';
+                sourceSite = 'pronaturalscbdoil.net';
                 // sourceSite = 'cbdoilpro.net';
                 // sourceSite = 'hempcbdchoice.com';
                 // sourceSite = 'cbdbakeshops.com';
                 sourceSite = getHostname(sourceSite.toString());
-                sourceSiteDir = sourceSite;
+                let currTheme = getCurrThemeDir();
+                sourceSiteDir = currTheme;
+                if (sourceSiteImagesDir) {
+                    sourceSiteImagesDir = "images/" + sourceSiteImagesDir;
+                } else {
+                    sourceSiteImagesDir = sourceSiteDir;
+                }
                 baseCss = '<link rel="stylesheet" href="baseStyle.css" type="text/css" />';
 
                 // $('.featured_businesses-carouselle').hide();
@@ -570,12 +614,17 @@
                 console.log('hostname is ' + sourceSite)
                 // sourceSite = sourceSite.toString().replaceAll("listings/", "");
                 sourceSite = removeLastSlash(sourceSite.toString());
-                sourceSiteDir = apiUrl + 'listings/' + sourceSite;
+                let currTheme = getCurrThemeDir();
+                sourceSiteDir = apiUrl + 'listings/' + currTheme;
+                if (sourceSiteImagesDir) {
+                    sourceSiteImagesDir = apiUrl + "images/" + sourceSiteImagesDir;
+                } else {
+                    sourceSiteImagesDir = sourceSiteDir;
+                }
                 console.log('final sourceSite ' + sourceSite);
                 baseCss = '<link rel="stylesheet" href="' + apiUrl + 'listings/baseStyle.css" type="text/css" />';
                 $('.featured_businesses-carouselle').hide();
             }
-
             console.log('sourceSiteDir ' + sourceSiteDir);
             console.log('adding baseCss ' + baseCss);
 
@@ -604,18 +653,7 @@
             } catch (e) {
             }
 
-            $('.a-search-section').css('background-image', 'url(\'' + sourceSiteDir + '/images/background.png\')');
-            let siteThemes = [];
-            siteThemes['bigtimes.co.uk'] = '1';
-            siteThemes['dailylondonpost.co.uk'] = '2';
-            siteThemes['forbesmagazine.co.uk'] = '3';
-            siteThemes['ipsnews.com.au'] = '4';
-            siteThemes['newspronto.co.uk'] = '5';
-            siteThemes['newyorkmagazine.co.uk'] = '6';
-            siteThemes['theamericanreporters.com'] = '7';
-            siteThemes['thegiantbomb.com'] = '8';
-            siteThemes['usatodayjournal.com'] = '9';
-            siteThemes['world-gd.com'] = '10';
+            $('.a-search-section').css('background-image', 'url(\'' + sourceSiteImagesDir + '/images/background.png\')');
 
             let siteTitles = [];
             let titles = [];
@@ -636,10 +674,6 @@
             let currTitle = siteTitles[sourceSite];
             if (!currTitle) {
                 currTitle = titles.at(Math.floor(Math.random() * titles.length))
-            }
-            let currTheme = siteThemes[sourceSite];
-            if (!currTheme) {
-                currTheme = Math.floor(Math.random() * siteThemes.length);
             }
             let firstWord = currTitle.split(" ")[0]
             let restTitle = currTitle.replace(firstWord, '');
