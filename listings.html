@@ -140,6 +140,9 @@
                         <a id="categoryLink" href=""><span class="catName"></span></a>
                     </p>
                     <h1 id="bizTitle" class="font-bg bizDomain text-left"></h1>
+<!--                    <div class="row">-->
+<!--                        <h1 id="bizTitle" class="font-bg bizName text-left col-6 text-truncate"></h1>-->
+<!--                    </div>-->
                 </div>
                 <div class="m-auto">
                     <img src="" class="bizLogo" height="150"/>
@@ -191,7 +194,8 @@
         }
 
         var apiUrl = 'https://www.rabbitseo.com/';
-        let resourcesUrl = 'https://raw.githubusercontent.com/ronchuke/listings-ui/main/';
+        let resourcesUrl = 'https://www.rabbitseo.com/listings-ui/';
+        // let resourcesUrl = 'https://raw.githubusercontent.com/ronchuke/listings-ui/main/';
         let sourceSiteDir, sourceSiteImagesDir;
         let bizParameter = "biz";
         let siteThemes = [];
@@ -579,10 +583,11 @@
             }
             console.log('sourceSite ' + sourceSite);
             // console.log('hostname is ' + getHostname("https://newyorkmagazine.co.uk/online-business/"));
-            if (sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com')) {
+            if ((sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com'))) {
+            // if (false && (sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com'))) {
                 // if (true || sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com')) {
-                sourceSite = 'newyorkmagazine.co.uk';
-                //     sourceSite = 'theamericanreporters.com';
+                // sourceSite = 'newyorkmagazine.co.uk';
+                    sourceSite = 'theamericanreporters.com';
                 // sourceSite = 'newspronto.co.uk';
                 //     sourceSite = 'world-gd.com';
                 //     sourceSite = 'www.dailylondonpost.co.uk';
@@ -598,7 +603,7 @@
                 // sourceSite = 'pronaturalscbdoil.net';
                 // sourceSite = 'cbdoilpro.net';
                 // sourceSite = 'hempcbdchoice.com';
-                sourceSite = 'cbdbakeshops.com';
+                // sourceSite = 'cbdbakeshops.com';
                 sourceSite = getHostname(sourceSite.toString());
                 let currTheme = getCurrThemeDir();
                 sourceSiteDir = currTheme;
