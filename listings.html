@@ -191,6 +191,7 @@
         }
 
         var apiUrl = 'https://www.rabbitseo.com/';
+        let resourcesUrl = 'https://raw.githubusercontent.com/ronchuke/listings-ui/main/';
         let sourceSiteDir, sourceSiteImagesDir;
         let bizParameter = "biz";
         let siteThemes = [];
@@ -530,6 +531,7 @@
                 sourceSiteImagesDir = getSumLetters(sourceSite) % themesImagesCount;
                 // currTheme = Math.floor(Math.random() * themesCssCount) + 1;
                 console.log('theme not found, random theme ' + currTheme);
+                console.log('theme not found, random sourceSiteImagesDir ' + sourceSiteImagesDir);
             }
             console.log('getCurrThemeDir ' + currTheme)
             return currTheme;
@@ -593,10 +595,10 @@
                 // sourceSite = 'dailynewsau.com.au';
                 // sourceSite = 'dailymagazine.com.au';
                 // sourceSite = 'cbdkings.net';
-                sourceSite = 'pronaturalscbdoil.net';
+                // sourceSite = 'pronaturalscbdoil.net';
                 // sourceSite = 'cbdoilpro.net';
                 // sourceSite = 'hempcbdchoice.com';
-                // sourceSite = 'cbdbakeshops.com';
+                sourceSite = 'cbdbakeshops.com';
                 sourceSite = getHostname(sourceSite.toString());
                 let currTheme = getCurrThemeDir();
                 sourceSiteDir = currTheme;
@@ -615,16 +617,17 @@
                 // sourceSite = sourceSite.toString().replaceAll("listings/", "");
                 sourceSite = removeLastSlash(sourceSite.toString());
                 let currTheme = getCurrThemeDir();
-                sourceSiteDir = apiUrl + 'listings/' + currTheme;
+                sourceSiteDir = resourcesUrl + currTheme;
                 if (sourceSiteImagesDir) {
-                    sourceSiteImagesDir = apiUrl + "images/" + sourceSiteImagesDir;
+                    sourceSiteImagesDir = resourcesUrl + "images/" + sourceSiteImagesDir;
                 } else {
                     sourceSiteImagesDir = sourceSiteDir;
                 }
                 console.log('final sourceSite ' + sourceSite);
-                baseCss = '<link rel="stylesheet" href="' + apiUrl + 'listings/baseStyle.css" type="text/css" />';
+                baseCss = '<link rel="stylesheet" href="' + resourcesUrl + 'baseStyle.css" type="text/css" />';
                 $('.featured_businesses-carouselle').hide();
             }
+            console.log('final sourceSiteImagesDir ' + sourceSiteImagesDir);
             console.log('sourceSiteDir ' + sourceSiteDir);
             console.log('adding baseCss ' + baseCss);
 
@@ -680,8 +683,6 @@
             $('p.brandTitle span.text1').html(firstWord + ' ');
             $('p.brandTitle span.text2').html(restTitle);
 
-            // prod
-            // $('head').append('<link rel="stylesheet" href="' + apiUrl + '/listings/' + sourceSite + '/css/style.css" type="text/css" />');
             console.log('final sourceSite ' + sourceSite);
             console.log('set homeLink to ' + location.href.split("?")[0])
             $('.homeLink').attr('href', location.href.split("?")[0]);
