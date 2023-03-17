@@ -194,8 +194,8 @@
         }
 
         var apiUrl = 'https://www.rabbitseo.com/';
-        let resourcesUrl = 'https://www.rabbitseo.com/listings-ui/';
-        // let resourcesUrl = 'https://raw.githubusercontent.com/ronchuke/listings-ui/main/';
+        // let resourcesUrl = 'https://www.rabbitseo.com/listings-ui/';
+        let resourcesUrl = 'https://raw.githubusercontent.com/ronchuke/listings-ui/main/';
         let sourceSiteDir, sourceSiteImagesDir;
         let bizParameter = "biz";
         let siteThemes = [];
@@ -583,8 +583,8 @@
             }
             console.log('sourceSite ' + sourceSite);
             // console.log('hostname is ' + getHostname("https://newyorkmagazine.co.uk/online-business/"));
-            if ((sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com'))) {
-            // if (false && (sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com'))) {
+            // if ((sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com'))) {
+            if (false && (sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com'))) {
                 // if (true || sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com')) {
                 // sourceSite = 'newyorkmagazine.co.uk';
                     sourceSite = 'theamericanreporters.com';
@@ -618,6 +618,7 @@
             } else {
                 // sourceSite = removeHttp(sourceSite.toString());
                 sourceSite = getHostname(sourceSite.toString());
+                sourceSite = 'theamericanreporters.com';
                 console.log('hostname is ' + sourceSite)
                 // sourceSite = sourceSite.toString().replaceAll("listings/", "");
                 sourceSite = removeLastSlash(sourceSite.toString());
@@ -636,30 +637,43 @@
             console.log('sourceSiteDir ' + sourceSiteDir);
             console.log('adding baseCss ' + baseCss);
 
-            themeCss = sourceSiteDir + '/css/style.css';
-            $('head').append(baseCss);
-            console.log('adding theme css ' + themeCss);
-            $('head').append('<link rel="stylesheet" href="' + themeCss + '" type="text/css" />');
+            $.ajax({
+                url: resourcesUrl + 'baseStyle.css', dataType: 'html', success: function (data) {
+                    // console.log(resourcesUrl + 'baseStyle.css is ' + data)
+                    $( "<style>" + data + " </style>" ).appendTo("head");
+                }
+            });
 
-            try {
-                $.ajax({
-                    url: themeCss,
-                    type: 'HEAD',
-                    error: function () {
-                        // alert(2);
-                        console.log('theme not found, adding deafult theme css ' + themeCss);
-                        console.log('replace on ' + themeCss + ' sourceSite ' + sourceSite + ' with dailylondon');
-                        themeCss = themeCss.replace(sourceSite, 'dailylondonpost.co.uk');
-                        console.log('new themeCss ' + themeCss);
-                        themeCss = '<link rel="stylesheet" href="' + themeCss + '" type="text/css" />';
-                        $('head').append(themeCss);
-                    },
-                    success: function () {
-                        // themeCss = '<link rel="stylesheet" href="' + themeCss + '" type="text/css" />';
-                    }
-                });
-            } catch (e) {
-            }
+            // $('head').append(baseCss);
+            themeCss = sourceSiteDir + '/css/style.css';
+            console.log('adding theme css ' + themeCss);
+            $.ajax({
+                url: themeCss, dataType: 'html', success: function (data) {
+                    // console.log(themeCss + ' is ' + data)
+                    $( "<style>" + data + " </style>" ).appendTo("head");
+                }
+            });
+            // $('head').append('<link rel="stylesheet" href="' + themeCss + '" type="text/css" />');
+
+            // try {
+            //     $.ajax({
+            //         url: themeCss,
+            //         type: 'HEAD',
+            //         error: function () {
+            //             // alert(2);
+            //             console.log('theme not found, adding deafult theme css ' + themeCss);
+            //             console.log('replace on ' + themeCss + ' sourceSite ' + sourceSite + ' with dailylondon');
+            //             themeCss = themeCss.replace(sourceSite, 'dailylondonpost.co.uk');
+            //             console.log('new themeCss ' + themeCss);
+            //             themeCss = '<link rel="stylesheet" href="' + themeCss + '" type="text/css" />';
+            //             $('head').append(themeCss);
+            //         },
+            //         success: function () {
+            //             // themeCss = '<link rel="stylesheet" href="' + themeCss + '" type="text/css" />';
+            //         }
+            //     });
+            // } catch (e) {
+            // }
 
             $('.a-search-section').css('background-image', 'url(\'' + sourceSiteImagesDir + '/images/background.png\')');
 
