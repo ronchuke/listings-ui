@@ -618,7 +618,9 @@
             } else {
                 // sourceSite = removeHttp(sourceSite.toString());
                 sourceSite = getHostname(sourceSite.toString());
-                // sourceSite = 'theamericanreporters.com';
+                if (sourceSite.toLowerCase().includes('c:/') || sourceSite.includes('localhost') || sourceSite.includes('rabbitseo.com')) {
+                    sourceSite = 'newspronto.co.uk';
+                }
                 console.log('hostname is ' + sourceSite)
                 // sourceSite = sourceSite.toString().replaceAll("listings/", "");
                 sourceSite = removeLastSlash(sourceSite.toString());
